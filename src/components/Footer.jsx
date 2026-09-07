@@ -21,8 +21,11 @@ const Footer = () => {
           <div className="flex flex-col gap-6 w-full md:w-auto">
             <div>
               <p className="text-gray-400 text-sm mb-2">Connect with me</p>
-              <a href="mailto:sunilkumar960033@gmail.com" className="text-xl md:text-5xl font-medium hover:text-gray-300 transition-colors break-words">
+              <a href="mailto:sunilkumar960033@gmail.com" className="text-xl md:text-4xl font-medium hover:text-gray-300 transition-colors break-words block">
                 sunilkumar960033@gmail.com
+              </a>
+              <a href="tel:+919600334699" className="text-lg md:text-2xl font-medium text-gray-300 hover:text-white transition-colors mt-2 block">
+                +91 96003 34699
               </a>
             </div>
 

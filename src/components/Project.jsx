@@ -1,27 +1,34 @@
 import React, { useState, useEffect, useRef } from 'react';
+import freequoLogo from '../assets/freequo_logo.png';
+import taskmindLogo from '../assets/taskmind_logo.png';
 
 const projects = [
   {
-    name: 'INSTAGRAM ai AUTOMATION PLATFORM',
+    name: 'FREEQUO FREELANCE PLATFORM',
     title: (
       <>
-        INSTAGRAM <span className="font-light italic text-gray-300 lowercase font-serif">ai</span><br />
-        AUTOMATION PLATFORM
+        FREEQUO <span className="font-light italic text-gray-300 lowercase font-serif">freelance</span><br />
+        PLATFORM
       </>
     ),
-    description: "An AI-powered Instagram chat automation platform that instantly responds to customer messages, qualifies leads, automates conversations, and helps businesses improve engagement while saving time through intelligent workflows.",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2000&auto=format&fit=crop"
+    description: "A full-stack freelance platform that connects clients with skilled freelancers, making it easy to discover talent, post projects, manage work, and collaborate through a seamless digital experience.",
+    image: freequoLogo,
+    imageFit: 'object-contain p-8 md:p-12 bg-white',
+    liveDemo: 'https://freequo-frontend.onrender.com/',
+    github: 'https://github.com/sunilkumar2731/freequo'
   },
   {
-    name: 'LiveMeet Translate',
+    name: 'TASKMIND AI – AI-POWERED PRODUCTIVITY',
     title: (
       <>
-        LIVEMEET <br />
-        TRANSLATE
+        TASKMIND <span className="font-light italic text-gray-300 lowercase font-serif">ai</span><br />
+        AI-POWERED PRODUCTIVITY
       </>
     ),
-    description: "A real-time AI-powered Google Meet translation platform that listens to live conversations, converts speech to text, translates it into the user's preferred language, and automatically generates organized meeting notes with AI-powered summaries and key action items.",
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2000&auto=format&fit=crop"
+    description: "An intelligent productivity platform that combines smart task management, multilingual AI task capture, adaptive reminders, real-time notifications, and productivity analytics to help users plan, prioritize, and complete their work.",
+    image: taskmindLogo,
+    imageFit: 'object-contain p-8 md:p-12 bg-white',
+    github: 'https://github.com/sunilkumar2731/TaskMind.AI'
   },
   {
     name: 'AI Smart Keyboard APP',
@@ -33,17 +40,6 @@ const projects = [
     ),
     description: "An AI-powered mobile keyboard application built with Flutter that enhances typing through real-time grammar correction, spelling fixes, intelligent word prediction, and AI-driven sentence rewriting. It delivers fluent, natural English while providing a fast, responsive, and seamless typing experience across mobile applications.A next-generation keyboard application that utilizes artificial intelligence to learn your typing habits and provide context-aware predictions.",
     image: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?q=80&w=2000&auto=format&fit=crop"
-  },
-  {
-    name: 'Nova AI – Intelligent Desktop Assistant',
-    title: (
-      <>
-        JARVIS <span className="font-light italic text-gray-300 lowercase font-serif">ai</span><br />
-        DESKTOP ASSISTANT
-      </>
-    ),
-    description: "An AI-powered desktop assistant that enables hands-free laptop control through natural voice commands. It can open applications, manage files, browse the web, answer questions, automate tasks, and execute system commands using advanced speech recognition and large language models.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000&auto=format&fit=crop"
   }
 ];
 
@@ -84,11 +80,11 @@ const Project = ({ onCtaClick }) => {
             <div key={proj.name} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center justify-between gap-12 lg:gap-16 w-full group`}>
 
               {/* Image Side */}
-              <div className="w-full lg:w-6/12 overflow-hidden relative aspect-[16/10] bg-[#111] rounded-sm">
+              <div className="w-full lg:w-6/12 overflow-hidden relative aspect-[16/10] bg-[#111] rounded-sm flex items-center justify-center">
                 <img
                   src={proj.image}
                   alt={proj.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                  className={`w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100 ${proj.imageFit || 'object-cover'}`}
                 />
               </div>
 
@@ -105,18 +101,47 @@ const Project = ({ onCtaClick }) => {
                 </p>
 
                 <div className="flex items-center gap-4 flex-wrap">
-                  <button onClick={onCtaClick} className="cursor-pointer px-6 py-2.5 rounded-full border border-[#ccff00] bg-[#ccff00] text-black text-xs md:text-sm font-medium hover:bg-[#b3e600] hover:border-[#b3e600] transition-colors inline-flex items-center gap-2">
-                    Live Demo
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                    </svg>
-                  </button>
-                  <button onClick={onCtaClick} className="cursor-pointer px-6 py-2.5 rounded-full border border-white/30 text-white text-xs md:text-sm hover:bg-white hover:text-black transition-colors inline-flex items-center gap-2">
-                    GitHub
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                  </button>
+                  {proj.liveDemo ? (
+                    <a
+                      href={proj.liveDemo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cursor-pointer px-6 py-2.5 rounded-full border border-[#ccff00] bg-[#ccff00] text-black text-xs md:text-sm font-medium hover:bg-[#b3e600] hover:border-[#b3e600] transition-colors inline-flex items-center gap-2"
+                    >
+                      Live Demo
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <button onClick={onCtaClick} className="cursor-pointer px-6 py-2.5 rounded-full border border-[#ccff00] bg-[#ccff00] text-black text-xs md:text-sm font-medium hover:bg-[#b3e600] hover:border-[#b3e600] transition-colors inline-flex items-center gap-2">
+                      Live Demo
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                      </svg>
+                    </button>
+                  )}
+
+                  {proj.github ? (
+                    <a
+                      href={proj.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cursor-pointer px-6 py-2.5 rounded-full border border-white/30 text-white text-xs md:text-sm hover:bg-white hover:text-black transition-colors inline-flex items-center gap-2"
+                    >
+                      GitHub
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                      </svg>
+                    </a>
+                  ) : (
+                    <button onClick={onCtaClick} className="cursor-pointer px-6 py-2.5 rounded-full border border-white/30 text-white text-xs md:text-sm hover:bg-white hover:text-black transition-colors inline-flex items-center gap-2">
+                      GitHub
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                      </svg>
+                    </button>
+                  )}
                 </div>
               </div>
 

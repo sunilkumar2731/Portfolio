@@ -75,9 +75,11 @@ const ContactSection = () => {
                         </div>
 
                         {/* Phone */}
-                        <div className="hidden md:block">
+                        <div>
                             <p className="text-gray-400 text-sm mb-2">Phone:</p>
-                            <p className="text-xl tracking-wide">{import.meta.env.VITE_PHONE_NUMBER}</p>
+                            <a href="tel:+919600334699" className="text-xl tracking-wide hover:text-[#ccff00] transition-colors">
+                                {import.meta.env.VITE_PHONE_NUMBER || '+91 96003 34699'}
+                            </a>
                         </div>
 
 
